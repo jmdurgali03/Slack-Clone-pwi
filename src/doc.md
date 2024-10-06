@@ -35,3 +35,5 @@ saludar({nombre: 'juan', apellido: 'suarez'}) */
 DRY: Dont Repeat Yourself.
 YAGNI: You Arent Gonna Need It.
 KISS: Keep It Simple, Stupid.
+
+npm i uuid --> Resolver problemas de id
