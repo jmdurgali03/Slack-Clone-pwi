@@ -14,8 +14,8 @@ function App() {
         <Route path='/' element={<WorkspaceScreen />} />
         {/* Formulario para crear workspace */}
         <Route path='/new' element={<CreateWorkpaceScreen />} />
-
-        <Route path='/workspace' element={<Workspaces />} />
+        {/* Entornos de trabajo */}
+        <Route path='/workspace/:workspace_id' element={<Workspaces />} />
       </Routes>
 
     </>

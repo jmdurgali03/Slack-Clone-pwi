@@ -1,8 +1,13 @@
 import React from 'react'
 import ChannelList from '../components/channelList/ChannelList';
 import ChatList from '../components/chatList/ChatList';
+import { useParams } from 'react-router-dom';
+import { obtenerWorkspacesPorId } from '../data';
 
 const WorkspaceScreen = () => {
+
+    const { workspace_id } = useParams()
+    const workspace = obtenerWorkspacesPorId(workspace_id)
 
     const messages = [
         {
@@ -42,9 +47,8 @@ const WorkspaceScreen = () => {
 
     return (
         <>
-            <ChannelList canales={canales} titulo={'Canales importantes'} />
-            <hr />
-            <ChatList messages={messages} />
+            <h1>{workspace.name}</h1>
+            <ChannelList canales={workspace.channels} titulo={'Canales'} />
         </>
     )
 }

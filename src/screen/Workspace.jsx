@@ -14,11 +14,12 @@ const Workspaces = () => {
                     return (
                         <div key={workspace.id}>
                             <h3>{workspace.name}</h3>
-                            <Link>Entrar</Link>
+                            <Link to={'/workspace/' + workspace.id}>Entrar</Link>
                         </div>
                     )
                 })
             }
+            <Link to='/new'> Create new Workspace </Link>
         </div>
     )
 }

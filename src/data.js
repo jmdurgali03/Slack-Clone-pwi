@@ -105,4 +105,10 @@ const crearWorkspace = (newWorkspace) => {
     localStorage.setItem('workspaces', JSON.stringify(workspaces))
 }
 
-export {obtenerWorkspaces, crearWorkspace}
+const obtenerWorkspacesPorId = (id) => {
+    let workspaces = obtenerWorkspaces()
+    let workspace = workspaces.find(workspace => workspace.id == id)
+    return workspace
+}
+
+export {obtenerWorkspaces, crearWorkspace, obtenerWorkspacesPorId}

@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import { crearWorkspace, obtenerWorkspaces } from '../data'
+import { useNavigate } from 'react-router-dom'
 
 const CreateWorkpaceScreen = () => {
 
     const [error, setError] = useState({ text: '', isError: false })
+    const navigation = useNavigate()
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -26,7 +28,8 @@ const CreateWorkpaceScreen = () => {
         let workspaces = JSON.parse(localStorage.getItem('workspaces')) */
 
         crearWorkspace(newWorkspace)
-        obtenerWorkspaces()
+        console.log(obtenerWorkspaces())
+        navigation('/workspace')
     }
 
     return (
